@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propostas - CRM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>CRM Genérico</h2>
+        <ul>
+            <li><a href="index.html">🏠 Página Inicial</a></li>
+            <li><a href="/clients.html">📋 Clientes</a></li>
+            <li><a href="/orders.html">📄 Propostas</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>Lista de Propostas</h1>
+            <button class="btn-nova-proposta" onclick="abrirModalProposta()">+ Nova Proposta</button>
+        </header>
+
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Data de Criação</th>
+                        <th>Vendedor</th>
+                        <th>Valor</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-propostas">
+                    <!-- Propostas cadastradas aparecerão aqui -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <!-- Modal para nova proposta -->
+    <div id="modal-proposta" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModalProposta()">&times;</span>
+            <h2>Nova Proposta</h2>
+            <form id="form-proposta">
+                <label>Cliente:</label>
+                <input type="text" id="cliente" required>
+
+                <label>Data de Criação:</label>
+                <input type="date" id="data" required>
+
+                <label>Vendedor:</label>
+                <input type="text" id="vendedor" required>
+
+                <label>Valor (R$):</label>
+                <input type="number" id="valor" required>
+
+                <button type="button" onclick="salvarProposta()">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
